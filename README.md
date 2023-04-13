@@ -1,3 +1,3 @@
-### Summary of project
+# Summary of project
 
-Using this poject to test chatbot functionality and data collection via a text-based interface.
+Using this project to test chatbot functionality and data collection via a text-based interface.
