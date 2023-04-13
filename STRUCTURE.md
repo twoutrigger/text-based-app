@@ -7,7 +7,8 @@ Steps required:
 2. Collect phone number of the user
 3. Provide a list of questions available (1,2,3)
 4. Extract a list of items from plain text
-5. Create Person class for storing data
+5. Collect which questions user was interested in
+6. Create Person class for storing data
 
 
 Packages used:
