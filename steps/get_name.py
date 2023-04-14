@@ -2,15 +2,16 @@ import spacy
 
 nlp = spacy.load("en_core_web_sm")
 
-text = "My name is Jim"
+def get_name(msg):
 
-doc = nlp(text)
+    doc = nlp(msg)
 
-for entity in doc.ents:
+    name = False
 
-    if entity.label_ == 'PERSON':
-        print ('Person found')
-        # save entity.text i.e. Jim
+    for entity in doc.ents:
 
-    else:
-        print("Sorry I didn't get that")
+        if entity.label_ == 'PERSON':
+
+            name = entity.text
+    
+    return name
