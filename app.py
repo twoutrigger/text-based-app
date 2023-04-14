@@ -38,5 +38,14 @@ if __name__ == "__main__":
             print(bot_string + "What is your phone number?")
             collect_phone = get_phone(sentence)
 
+            if collect_phone:
+                p.phone_number = collect_phone
+                print(bot_string + "Thanks, you number is " + collect_phone)
+
+            else:
+                print(bot_string + "Sorry I didn't catch that. What is your phone number?")
+
         # resp = get_response(sentence)
         # print(bot_string + resp)
+
+        ## need to change the loop structure, since get_phone is prompted right after entering get_name
