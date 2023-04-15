@@ -6,8 +6,6 @@ def get_response(msg):
     return "Hi"
 
 
-
-
 if __name__ == "__main__":
 
     bot_string = "Chatbot: "
