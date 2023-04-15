@@ -1,6 +1,7 @@
 from utils.person import Person
 from steps.get_name import get_name
 from steps.get_phone import get_phone
+from steps.get_item import get_item
 
 def get_response(msg):
     return "Hi"
@@ -10,7 +11,7 @@ if __name__ == "__main__":
 
     bot_string = "Chatbot: "
 
-    p = Person('', '')
+    p = Person('', '', '')
 
     print("Let's get started! (type 'quit' to exit)")
     print("\n")
@@ -42,6 +43,24 @@ if __name__ == "__main__":
 
             else:
                 print(bot_string + "Sorry I didn't catch that. What is your phone number?")
+
+        if p.item == '':
+            print(bot_string + "What items do you need today?")
+            collect_item = get_item(sentence)
+
+            if collect_item:
+                p.item = collect_item
+                print(bot_string + "Thanks, you items are:")
+                print(collect_item)
+                print(type(collect_item))
+
+                for k, v in collect_item.items():
+                    print(str(v) + ' ' + str(k))
+
+            else:
+                print(bot_string + "Sorry I didn't catch that. What items do you need today?")
+
+
 
         # resp = get_response(sentence)
         # print(bot_string + resp)
