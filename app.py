@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-# from chat import get_response
+from utils.person import Person
+from chat import next_step
 
 app = Flask(__name__)
 
@@ -11,8 +12,9 @@ def index_get():
 
 @app.post("/predict")
 def predict():
+    person = Person(None, None, None)
     text = request.get_json().get("message")
-    # response = get_response(text)
+    response = next_step(text, person)
     response = "Hi"
     message = {"answer": response}
     return jsonify(message)
